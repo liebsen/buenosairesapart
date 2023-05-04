@@ -33,9 +33,7 @@
     }
 
     #loader {
-      /*background-color: var(--theme-dark-color);*/
-      background: var(--theme-color);
-      background: radial-gradient(circle, var(--theme-color) 0%, var(--theme-dark-color) 100%);
+      background-color: var(--theme-dark-color);
       position: fixed;
       left: 0;
       top: 0;

@@ -58,7 +58,7 @@
 
     <?php $i=0; foreach($site->children()->visible() as $section):?>
       <?php if ($section->home()->value() === 'true'):?>
-      <section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in onscroll-content-fade-right" id="<?= $section->slug() ?>">        
+      <section class="spotlight style1 orient-<?= intval($i%2) == 0 ? 'right' : 'left' ?> content-align-left image-position-center onscroll-image-fade-in onscroll-content-fade-<?= intval($i%2) == 0 ? 'right' : 'left' ?>" id="<?= $section->slug() ?>">        
         <div class="content">
           <div class="anchor" name="<?= $section->slug() ?>"></div>
           <h1><?= $section->title() ?></h1>
