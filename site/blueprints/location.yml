@@ -1,0 +1,38 @@
+title: Location
+pages: true
+files: true
+fields:
+  title:
+    label: Título
+    type:  text
+  subtitle:
+    label: Subtítulo
+    type:  text
+  intro:
+    label: Intro
+    type:  textarea
+  text:
+    label: Texto
+    type:  textarea
+  address:
+    label: Dirección
+    type:  text
+  lat:
+    label: Latitud
+    type:  text
+  lng:
+    label: Longitud
+    type:  text
+  zoom:
+    label: Zoom
+    type:  number
+  style:
+    label: Style
+    type:  text
+    default: streets-v11    
+  home:
+    label: Mostrar en Inicio
+    type:  toggle
+  header:
+    label: Mostrar en header
+    type:  toggle

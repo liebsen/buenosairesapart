@@ -1,0 +1,61 @@
+title: Modelo
+pages: true
+files: 
+  fields: true
+    title:
+      label: Título
+      type:  title
+    caption:
+      label: Info
+      type:  textarea
+      buttons: false
+
+fields:
+  title:
+    label: Nombre
+    type:  title
+  subtitle:
+    label: Subtítulo
+    type:  textarea
+    buttons: false
+  image:
+    label: Imagen
+    type:  image
+  intro:
+    label: Copete
+    type:  textarea
+    buttons: false
+  text:
+    label: Cuerpo
+    type:  textarea
+  line-a:
+    type:  line
+  sup:
+    label: Superficie cubierta (m2)
+    type:  number
+  amb:
+    label: Ambientes (cantidad)
+    type:  number
+  rooms:
+    label: Dormitorios (cantidad)
+    type:  number
+  bathrooms:
+    label: Baños (cantidad)
+    type:  number
+  floors:
+    label: Plantas (m2)
+    type:  number
+  delivertime:
+    label: Tiempo de entrega (días)
+    type:  number
+  price:
+    label: Precio (ARS)
+    type:  number
+  equipment:
+    label: Equipación
+    type:  text
+  line-b:
+    type:  line
+  style:
+    label: Estilo
+    type:  text

@@ -1,0 +1,10 @@
+title: Files
+pages: false
+files: 
+  fields: true
+    title:
+      label: Title
+      type:  text
+    caption:
+      label: Caption
+      type:  textarea

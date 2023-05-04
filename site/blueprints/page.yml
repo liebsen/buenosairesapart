@@ -1,0 +1,33 @@
+title: Carpeta
+pages: true
+files: 
+  fields: true
+    title:
+      label: Título
+      type:  title
+    caption:
+      label: Info
+      type:  textarea
+      buttons: false
+
+fields:
+  title:
+    label: Título
+    type:  title
+  subtitle:
+    label: Subtítulo
+    type:  textarea
+    buttons: false
+  image:
+    label: Imagen
+    type:  image
+  intro:
+    label: Copete
+    type:  textarea
+    buttons: false
+  text:
+    label: Cuerpo
+    type:  textarea
+  style:
+    label: Estilo
+    type:  text

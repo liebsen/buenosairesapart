@@ -1,0 +1,18 @@
+title: Social
+pages: true
+files: false
+fields:
+  title:
+    label: Título
+    type:  text
+  action:
+    label: Acción
+    type:  text
+    help: "Acción interna ej: call, whatsapp, telegram, etc."
+  link:
+    label: Enlace
+    type:  text
+  icon:
+    label: Ícono
+    type:  text
+    help: "Ver https://fontawesome.com/icons para mas información"

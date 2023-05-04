@@ -1,0 +1,23 @@
+title: Contact
+pages: true
+files: 
+  fields: true
+    title:
+      label: Title
+      type:  text
+    caption:
+      label: Caption
+      type:  textarea
+fields:
+  title:
+    label: Title
+    type: text
+  text:
+    label: Text
+    type:  textarea
+  home:
+    label: Mostrar en Inicio
+    type:  toggle
+  header:
+    label: Mostrar en header
+    type:  toggle

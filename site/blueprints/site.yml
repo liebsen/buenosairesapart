@@ -1,0 +1,102 @@
+title: Site
+pages: true
+files: true
+fields:
+  title:
+    label: Título para este sitio
+    type:  title
+  text:
+    label: Descripción para motores de búsqueda
+    type:  textarea
+    buttons: false
+  slogan:
+    label: Eslógan para este sitio
+    type:  text
+  line-a:
+    type:  line
+  whatsapp:
+    label: Whatsapp de contacto
+    type:  tel
+  whatsapptext:
+    label: Texto de Whatsapp
+    type:  text
+  logo:
+    label: Logo del sitio
+    type:  image
+    required: true
+  favicon:
+    label: Favicon del sitio
+    type:  image
+    required: true
+    help: Ícono de solapa del navegador
+  line-b:
+    type:  line
+  logoloader:
+    label: Logo Pantalla Cargando
+    type:  image
+    required: true
+  backgroundloader:
+    label: Fondo Pantalla Cargando
+    type:  image
+  styleloader:
+    label: Estilo Pantalla Cargando
+    type:  text    
+  line-c:
+    type:  line
+  logomenu:
+    label: Logo Pantalla Menú
+    type:  image
+    required: true
+  backgroundmenu:
+    label: Fondo Pantalla  Menú
+    type:  image
+  stylemenu:
+    label: Estilo Menú
+    type:  text
+  line-d:
+    type:  line
+  themebackground:
+    label: Theme Background
+    type:  text
+    default: '#333333'
+    help: 'ej. white, magenta, #000000'
+  themecolor:
+    label: Theme Color
+    type:  text
+    default: '#ff7e21'
+    help: 'ej. white, magenta, #000000'
+  fontfamily:
+    label: Font Family
+    type:  text
+    default: 'Montserrat'
+    help: 'ej. Montserrat, Lato, ...'
+  fontweight:
+    label: Font Weight
+    type:  text
+    default: '300,500,600,700,800'
+    help: 'ej. 300,500,600,700,800'
+  boxshadow:
+    label: CSS Shadow (for boxes)
+    type:  text
+    default: '0 0 3px rgba(0,0,0,0.25)'
+    help: 'ej. 0 0 3px grey'
+  line-e:
+    type:  line
+  ogtype:
+    label: Tipo de aplicación redes sociales
+    type:  text
+    default: website
+  ogtitle:
+    label: Título redes sociales
+    type:  text
+  ogdescription:
+    label: Descripción redes sociales
+    type:  textarea
+  ogimage:
+    label: Imágen redes sociales
+    type:  image
+    help: JPG/PNG 500x500px
+  googleanalytics:
+    label: Analytics ID
+    type: text
+    help: Analytics Code ID provided by Google (G-XXXXXXXXXX)
