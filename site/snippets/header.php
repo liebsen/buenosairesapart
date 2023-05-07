@@ -22,7 +22,6 @@
   <link rel="stylesheet" href="/assets/css/swiffy-slider.min.css" />
   <noscript><link rel="stylesheet" href="as/sets/css/noscript.css" /></noscript>
 
-
   <style>
     :root {
       --theme-dark-color: <?= $site->themebackground() ?: '' ?>;
@@ -131,30 +130,30 @@
       </div>
     </div>
   </div>
-  <div class="overlay" style="<?= $site->stylemenu()->value() ? : '' ?>">
-    <div class="overlay-content" style="background-image: url(<?= $site->backgroundmenu()->value() ? $site->backgroundmenu()->toFile()->url() : '' ; ?>)">
-      <a class="close toggle-menu">
-        <img class="is-clickable" src="/assets/images/vector-29@2x.svg" width="30" />
-      </a>
-      <a href="/">
-        <img class="logo fadeIn delay" src="<?= $site->logomenu()->value() ? $site->logomenu()->toFile()->url() : '' ?>" width="280" />
-      </a>
-      <?php foreach($site->children()->visible() as $section):?>
-      <?php if ($section->header()->value() === 'true'):?>
-      <a class="fadeIn" href="/<?= $section->slug() ?>">
-        <?= $section->title() ?>
-      </a>
-      <?php endif;?>
-      <?php endforeach;?>      
-    </div>
-  </div>
   <div class="header">
-    <div class="align-left">
-      <a href="<?= $page->slug() !== 'home' ? '/' : '#home' ?>">
-        <img class="logo" src="<?= $site->logo()->value() ? $site->logo()->toFile()->url() : '' ?>" width="200" />
-      </a>
+    <a href="<?= $page->slug() !== 'home' ? '/' : '#home' ?>">
+      <img class="logo" src="<?= $site->logo()->value() ? $site->logo()->toFile()->url() : '' ?>" width="200" />
+    </a>
+    <div class="overlay desktop" style="<?= $site->stylemenu()->value() ? : '' ?>">
+      <div class="overlay-content" style="background-image: url(<?= $site->backgroundmenu()->value() ? $site->backgroundmenu()->toFile()->url() : '' ; ?>)">
+        <div class="overlay-tools">
+          <a class="close toggle-menu">
+            <img class="is-clickable" src="/assets/images/vector-29@2x.svg" width="30" />
+          </a>
+          <a href="/">
+            <img class="logo fadeIn delay" src="<?= $site->logomenu()->value() ? $site->logomenu()->toFile()->url() : '' ?>" width="280" />
+          </a>
+        </div>
+        <div class="menu-options">
+        <?php foreach($site->children()->visible() as $section):?>
+        <?php if ($section->header()->value() === 'true'):?>
+        <a class="fadeIn" href="/<?= $section->slug() ?>">
+          <?= $section->title() ?>
+        </a>
+        <?php endif;?>
+        <?php endforeach;?>     
+        </div> 
+      </div>
     </div>
-    <div class="align-right">
-      <img class="toggle-menu is-clickable" src="/assets/images/vector-20@2x.svg" width="30"/>
-    </div>    
+    <img class="mobile toggle-menu is-clickable" src="/assets/images/vector-20@2x.svg" width="30"/>
   </div>
