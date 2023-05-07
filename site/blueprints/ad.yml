@@ -1,0 +1,86 @@
+title: Aviso
+pages: false
+files: 
+  fields: true
+    title:
+      label: Title
+      type:  text
+    caption:
+      label: Caption
+      type:  textarea
+fields:
+  title:
+    label: Título del aviso
+    type:  text
+    validate:
+      minLength: 10
+      maxLength: 300
+  enable:
+    label: Activar
+    type:  toggle
+    default: true  
+  operation: 
+    label: Operación
+    type: radio
+    options: ['Venta', 'Alquiler']
+    default: 0
+  building:
+    label: Edificio
+    type:  radio
+    options: ['Casa', 'Chalet', 'Departamento', 'Monoambiente']
+  rooms:
+    label: Ambientes
+    type:  number
+  sup:
+    label: Superficie cubierta
+    type:  number
+  totsup:
+    label: Superficie total
+    type:  number
+  yard:
+    label: Patio
+    type:  toggle
+  balcony:
+    label: Balcón
+    type:  toggle
+  brightness:
+    label: Luminosidad
+    type: radio
+    options: ['Pobre', 'Regular', 'Buena', 'Excelente']
+    default: 1
+  address:
+    label: Dirección
+    type:  googlegeocode
+  lat:
+    label: Latitud
+    type:  text
+  lng:
+    label: Longitud
+    type:  text
+  text:
+    label: Cuerpo del aviso
+    type:  textarea
+  price:
+    label: Precio
+    type:  number
+    default: 1000
+  currency: 
+    label: Moneda
+    type: radio
+    options: ['ARS', 'USD']
+    default: 0
+  link:
+    label: Enlace
+    type:  text
+  showprice:
+    label: Mostrar Precio
+    type:  toggle
+    default: true
+  showaddress:
+    label: Mostrar Dirección
+    type:  toggle
+    default: true
+  sold:
+    label: Vendido
+    type:  toggle
+    default: false

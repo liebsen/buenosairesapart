@@ -1,0 +1,35 @@
+title: Avisos
+pages: true
+files: 
+  fields: true
+    title:
+      label: Title
+      type:  text
+    caption:
+      label: Caption
+      type:  textarea
+fields:
+  title:
+    label: Título
+    type:  text
+  subtitle:
+    label: Subtítulo
+    type:  text
+  button:
+    label: Texto del botón
+    type:  text    
+  image:
+    label: Imagen
+    type:  image
+  intro:
+    label: Intro
+    type:  textarea
+  text:
+    label: Text
+    type:  textarea
+  home:
+    label: Mostrar en Inicio
+    type:  toggle
+  header:
+    label: Mostrar en header
+    type:  toggle
