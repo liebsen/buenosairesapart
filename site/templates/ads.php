@@ -40,7 +40,7 @@
             <?php $locations[] = (object) [
               "title" => $ad->title()->value(),
               "url" => $ad->url(),
-              "img" => $ad->files()->first()->url(),
+              "img" => count($ad->files()) ? $ad->files()->first()->url() : '',
               "lng" => $ad->lng()->value(),
               "lat" => $ad->lat()->value()
             ]; ?>
@@ -55,9 +55,10 @@
             el.href = e.url
             el.className = 'marker'
             el.style.backgroundImage = `url(${e.img})`
+            console.log(e)
             const marker2 = new mapboxgl.Marker(el)
               .setLngLat(pos)
-              // .setPopup(popup)
+              .setPopup(popup)
               .addTo(map)
             bounds.extend(pos)
           })
@@ -75,7 +76,7 @@
           <?php if ($ad->operation()->value() == 0 && $ad->enable()->value() === 'true'):?>
           <article>
             <a href="<?= $ad->url() ?>" class="image">
-              <div class="slide-image" style="background-image: url('<?= $ad->files()->first()->url() ?>')"></div>
+              <div class="slide-image" style="background-image: url('<?= count($ad->files()) ? $ad->files()->first()->url() : '' ?>')"></div>
             </a>
             <div class="caption">
               <h3><?= $ad->title() ?></h3>

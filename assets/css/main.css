@@ -187,6 +187,7 @@ input, select, textarea {
 	p {
 		margin: 0 0 2rem 0;
 		line-height: 1.25;
+		font-size: 1rem;
 	}
 
 		p.major {
@@ -2107,13 +2108,13 @@ input, select, textarea {
 		border: 0;
 		cursor: pointer;
 		display: inline-block;
-		font-weight: 400;
+		font-weight: 600;
 		letter-spacing: 0.125em;
 		text-align: center;
 		text-decoration: none;
 		text-transform: uppercase;
 		white-space: nowrap;
-		font-size: 0.75rem;
+		font-size: 1rem;
 		max-width: 20rem;
 		height: 3.75em;
 		line-height: 3.75em;
@@ -4970,6 +4971,9 @@ input, select, textarea {
 
 			.spotlight.style1 .content {
 				width: 100%;
+		    display: flex;
+		    flex-direction: column;
+		    justify-content: flex-end;				
 			}
 
 			.spotlight.style1 .image {

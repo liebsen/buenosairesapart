@@ -1,13 +1,13 @@
 <?php $positions = ['center','top','left','right','bottom']; ?>
 <?php snippet('header') ?>
   <div id="wrapper" class="divided">
-    <section class="spotlight style1 orient-left content-align-left background-image fullscreen onload-image-fade-in onload-content-fade-right" id="home" style="background-image:url(<?= $page->files()->first() ? $page->files()->first()->url() : ''; ?>); background-position: <?= $page->files()->first() ? "center {$positions[intval($page->files()->first()->position()->value())]}" : 'center'; ?>">
+    <section class="spotlight style1 content-white orient-left content-align-left background-image fullscreen onload-image-fade-in onload-content-fade-right" id="home" style="background-image:url(<?= $page->files()->first() ? $page->files()->first()->url() : ''; ?>); background-position: <?= $page->files()->first() ? "center {$positions[intval($page->files()->first()->position()->value())]}" : 'center'; ?>">
       <div class="content">
         <div class="anchor" name="<?= $site->children()->first()->slug() ?>"></div>
-        <h1><?php echo $page->title()->html() ?></h1>
-        <p class="text-light text-hili"><?= $page->text() ?></p>
+        <h1 class="text-white"><?php echo $page->title()->html() ?></h1>
+        <p class="text-white text-hili"><?= $page->text() ?></p>
         <ul class="actions stacked">
-          <li><a href="#avisos" class="button large wide smooth-scroll-middle">Comenzar</a></li>
+          <li><a href="#avisos" class="button btn-white large wide smooth-scroll-middle">Comenzar</a></li>
         </ul>
       </div>
       <div class="tail" name="<?= $site->children()->first()->slug() ?>"></div>

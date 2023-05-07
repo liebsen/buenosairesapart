@@ -24,6 +24,15 @@ body.hidden {
   box-shadow: var(--boxshadow)
 }
 
+.text-white {
+  color: white;
+}
+
+.btn-white {
+  color: white!important;
+  box-shadow: inset 0 0 0 1px white;
+}
+
 .background-image {
   background-size: cover;
   background-repeat: no-repeat;
@@ -49,7 +58,6 @@ body.hidden {
   display: flex;
   justify-content: center;
   align-items: center;  
-  padding: 8rem 1rem 1rem 1rem;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -95,7 +103,7 @@ body.hidden {
 }
 
 .slider-container li {
-  padding: 3rem;
+  padding: 1.5rem;
 }
 
 .overlay-tools {
@@ -239,7 +247,7 @@ body.hidden {
 
 .header.scroll {
   min-height: 2rem;
-  background-color: white;
+  background-color: var(--theme-dark-color);
 }
 
 .header .logo {
@@ -299,7 +307,6 @@ body.hidden {
 
 .section {
   overflow: hidden;
-  margin-top: 7rem;
 }
 
 #map {

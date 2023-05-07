@@ -26,6 +26,7 @@ $(window).on("load", function() {
   $('.toggle-menu').click(() => {
     const overflow = document.querySelector('.overlay').classList.contains('active') ? 'auto' : 'hidden'
     document.querySelector('.overlay').classList.toggle('active')
+    document.querySelector('.overlay').classList.toggle('onload-content-fade-right')
     setTimeout(() => {
       $('body').addClass(overflow)
       //$(' html, body').css({'overflow-y': overflow})
