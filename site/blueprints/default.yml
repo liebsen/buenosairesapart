@@ -10,7 +10,7 @@ files:
       type:  textarea
     position:
       label: Position
-      type: radio
+      type: select
       options: ['center', 'top', 'left', 'right', 'bottom']
       help: Fit image direction 
 fields:
@@ -21,5 +21,14 @@ fields:
     label: Text
     type:  textarea
   style:
-    label: Estilo
-    type:  text    
+    label: Style
+    type:  text
+  action:
+    label: Call to Action
+    type:  toggle
+  actionText:
+    label: Call to Action text
+    type:  text
+  actionUrl:
+    label: Call to Action URL
+    type:  url

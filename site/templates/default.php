@@ -37,8 +37,10 @@
             <?php endforeach ?>
             </ul>
 
+            <?php if(count($site->find('avisos')->children()->visible()) > 1):?>
             <button type="button" class="slider-nav"></button>
             <button type="button" class="slider-nav slider-nav-next"></button>
+            <?php endif ?>
 
             <div class="slider-indicators">
               <?php foreach($site->find('avisos')->children()->visible() as $i => $item):?>

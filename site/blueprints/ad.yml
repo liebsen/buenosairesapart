@@ -10,8 +10,9 @@ files:
       type:  textarea
     position:
       label: Position
-      type: radio
-      options: ['center', 'top', 'left', 'right', 'bottom']      
+      type: select
+      options: ['center', 'top', 'left', 'right', 'bottom']
+      help: Fit image direction  
 fields:
   title:
     label: Título del aviso

@@ -141,17 +141,23 @@
             <img class="is-clickable" src="/assets/images/vector-29@2x.svg" width="30" />
           </a>
           <a href="/">
-            <img class="logo fadeIn delay" src="<?= $site->logomenu()->value() ? $site->logomenu()->toFile()->url() : '' ?>" width="280" />
+            <img class="logo animated fadeIn delay" src="<?= $site->logomenu()->value() ? $site->logomenu()->toFile()->url() : '' ?>" width="280" />
           </a>
         </div>
-        <div class="menu-options">
+        <div class="menu-options animated fadeIn delay2">
         <?php foreach($site->children()->visible() as $section):?>
         <?php if ($section->header()->value() === 'true'):?>
         <a class="fadeIn" href="/<?= $section->slug() ?>">
           <?= $section->title() ?>
         </a>
         <?php endif;?>
-        <?php endforeach;?>     
+        <?php endforeach;?>
+        <?php foreach(page('socials')->children() as $social): ?>
+        <a href="<?= $social->action()->value() ? $social->action() . ':' : '' ?><?= $social->link() ?>" class="icon style1 <?= $social->icon() ?>" target="_blank"><span class="label"><?= $social->title() ?></span></a>
+        <?php endforeach ?>
+        <?php if($page->action()):?>
+          <a href="<?= $page->actionUrl() ?>" class="button primary small"><?= $page->actionText() ?></a>
+        <?php endif ?>
         </div> 
       </div>
     </div>

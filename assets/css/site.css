@@ -44,6 +44,8 @@ body.hidden {
 .menu-options {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu-options a {
@@ -358,6 +360,10 @@ body.hidden {
   animation-delay: 1s;
 }
 
+.delay2 {
+  animation-delay: 2s;
+}
+
 .slide-image {
   background-repeat: no-repeat;
   background-position: center center;
@@ -445,7 +451,6 @@ body.hidden {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
 }
-
 
 @keyframes fadeOut {
   0% {
