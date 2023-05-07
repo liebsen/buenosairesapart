@@ -24,7 +24,7 @@
         <div class="swiffy">
           <div class="swiffy-slider">
             <ul class="slider-container">
-              <?php foreach($site->find('avisos')->children() as $item):?>
+              <?php foreach($site->find('avisos')->children()->visible() as $item):?>
               <li>
                 <a href="<?= $item->url() ?>" class="swiffy-item bg-light">
                   <div class="swiffy-img" style="background-image: url('<?= $item->files()->first() ? $item->files()->first()->url() : '' ?>')"></div>
@@ -41,9 +41,9 @@
             <button type="button" class="slider-nav slider-nav-next"></button>
 
             <div class="slider-indicators">
-              <button class="active"></button>
-              <button></button>
-              <button></button>
+              <?php foreach($site->find('avisos')->children()->visible() as $i => $item):?>
+              <button<?= !$i ? ' class="active"' : '' ?>></button>
+              <?php endforeach ?>
             </div>
           </div>
         </div>

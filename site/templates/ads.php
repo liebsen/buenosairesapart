@@ -30,9 +30,9 @@
           const map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/dark-v9',
-            center: [0,0],
-            zoom: 16,
-            interactive: false
+            center: [-58.468291099,-34.5420301],
+            zoom: 14,
+            // interactive: false
           })
 
           // Create a default Marker, colored black, rotated 45 degrees.
@@ -55,15 +55,16 @@
             el.href = e.url
             el.className = 'marker'
             el.style.backgroundImage = `url(${e.img})`
-            console.log(e)
             const marker2 = new mapboxgl.Marker(el)
               .setLngLat(pos)
               .setPopup(popup)
               .addTo(map)
             bounds.extend(pos)
           })
-          
-          map.fitBounds(bounds, { padding: 100 })
+          if(locations.length > 1) {
+            console.log('fit bounds')
+            map.fitBounds(bounds, { padding: 100 })
+          }
         </script>   
       </header>
 

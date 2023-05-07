@@ -12,12 +12,56 @@
     </div>
     <section class="section wrapper style1 align-center">
       <div class="anchor" name="<?= $page->slug() ?>"></div>
+
+
+      <!-- map -->      
       <header>
+        <?php if ($page->lat()->value() && $page->lng()->value()): ?>
+        <div class="map-container">
+          <div id="map"></div>
+        </div>
+        <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
+        <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+        <script>
+          // TO MAKE THE MAP APPEAR YOU MUST
+          // ADD YOUR ACCESS TOKEN FROM
+          // https://account.mapbox.com
+          const pos = [<?= $page->lng() ?>, <?= $page->lat() ?>]
+          mapboxgl.accessToken = 'pk.eyJ1Ijoib3ZlcmxlbW9uIiwiYSI6ImNraHVtN2lxOTB1dGUycm1hbHFvM215NzkifQ.mq69zruKTDCKvFuxi2dBjw';
+          const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/dark-v9',
+            center: pos,
+            pitch: 0,
+            bearing: 0,
+            zoom: 12,
+            interactive: false,
+          })
+
+          setTimeout(() => {
+            map.flyTo({
+              center: pos,
+              pitch: 70,
+              zoom:17,
+              bearing: -45,
+              duration: 15000,
+            })
+          }, 5000)
+
+          // Create a default Marker, colored black, rotated 45 degrees.
+          const marker2 = new mapboxgl.Marker({ color: 'red' })
+            .setLngLat(pos)
+            .addTo(map);
+        </script>   
+        <?php endif ?>        
+      </header>
+
+      <!--header>
         <div class="section-image" style="background-image:url(<?= $page->image() ? $page->image()->url() : ''; ?>)">
           <h1 class="text-shadow"><?= $page->title() ?></h1>
           <p class="text-shadow2"><?= $page->subtitle() ?></p>
         </div>
-      </header>
+      </header-->
 
       <div class="inner align-left">
         <!--h3 class=""><?= $page->title() ?></h3-->
@@ -59,35 +103,6 @@
       <div class="inner align-left">
         <div class="p-align-left"><?= $page->text()->kirbytext() ?></div>
       </div>
-      <!-- map -->      
-      <header>
-        <?php if ($page->lat()->value() && $page->lng()->value()): ?>
-        <div class="map-container">
-          <div id="map"></div>
-        </div>
-        <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
-        <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
-        <script>
-          // TO MAKE THE MAP APPEAR YOU MUST
-          // ADD YOUR ACCESS TOKEN FROM
-          // https://account.mapbox.com
-          const pos = [<?= $page->lng() ?>, <?= $page->lat() ?>]
-          mapboxgl.accessToken = 'pk.eyJ1Ijoib3ZlcmxlbW9uIiwiYSI6ImNraHVtN2lxOTB1dGUycm1hbHFvM215NzkifQ.mq69zruKTDCKvFuxi2dBjw';
-          const map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/dark-v9',
-            center: pos,
-            zoom: 16
-          })
-
-          // Create a default Marker, colored black, rotated 45 degrees.
-          const marker2 = new mapboxgl.Marker({ color: 'red' })
-            .setLngLat(pos)
-            .addTo(map);
-        </script>   
-        <?php endif ?>        
-      </header>
-
 
       <!-- Gallery -->
       <?php if ($page->files()->count() > 1) :?>
