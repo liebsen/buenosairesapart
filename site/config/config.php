@@ -18,7 +18,6 @@ for more information: http://getkirby.com/license
 c::set('license', 'put your license key here');
 c::set('debug', $_SERVER['REMOTE_ADDR'] === '127.0.0.1');
 c::set('panel.install', true);
-c::set('debug', true);
 
 /*
 

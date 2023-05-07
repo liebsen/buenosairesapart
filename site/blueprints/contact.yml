@@ -8,6 +8,10 @@ files:
     caption:
       label: Caption
       type:  textarea
+    position:
+      label: Position
+      type: radio
+      options: ['center', 'top', 'left', 'right', 'bottom']   
 fields:
   title:
     label: Title

@@ -3,13 +3,15 @@ pages: true
 files: 
   fields: true
     title:
-      label: Título
-      type:  title
+      label: Title
+      type:  text
     caption:
-      label: Info
+      label: Caption
       type:  textarea
-      buttons: false
-
+    position:
+      label: Position
+      type: radio
+      options: ['center', 'top', 'left', 'right', 'bottom']   
 fields:
   title:
     label: Título

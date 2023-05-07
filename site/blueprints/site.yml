@@ -1,6 +1,17 @@
 title: Site
 pages: true
-files: true
+files: 
+  fields: true
+    title:
+      label: Title
+      type:  text
+    caption:
+      label: Caption
+      type:  textarea
+    position:
+      label: Position
+      type: radio
+      options: ['center', 'top', 'left', 'right', 'bottom']
 fields:
   title:
     label: Título para este sitio

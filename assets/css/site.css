@@ -24,6 +24,14 @@ body.hidden {
   box-shadow: var(--boxshadow)
 }
 
+.background-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.background-image-position-center {
+  background-position: center;
+}
 .menu-options {
   display: flex;
   flex-direction: column;
@@ -32,8 +40,8 @@ body.hidden {
 .menu-options a {
   color: var(--theme-color);
   font-size: 1.25rem;
-  text-shadow: 0 0 3px #333;
-  font-weight: 700;
+  text-shadow: 0 0 2px #555;
+  font-weight: 600;
   text-decoration: none;
 }
 
