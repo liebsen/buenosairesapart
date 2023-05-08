@@ -19,7 +19,7 @@
         <h1><?php echo $site->find('/ads')->title() ?></h1>
         <p class="text-light text-hili"><?php echo $site->find('/ads')->text() ?></p>
         <ul class="actions stacked">
-          <li><a href="/ads" class="button large wide smooth-scroll-middle">Más de nuestros ads</a></li>
+          <li><a href="/ads" class="button large wide smooth-scroll-middle">See all offerings</a></li>
         </ul>        
         <div class="swiffy">
           <div class="swiffy-slider">
@@ -62,7 +62,7 @@
           <h1><?= $section->title() ?></h1>
           <p class="text-light text-hili align-left"><?= $section->intro() ?></p>
           <ul class="actions special">
-            <li><a href="/<?= $section->slug() ?>" class="button primary"> Conocer más </a></li>
+            <li><a href="/<?= $section->slug() ?>" class="button primary"> Learn more </a></li>
           </ul>
           <div class="tail" name="<?= $section->slug() ?>"></div>
         </div>
