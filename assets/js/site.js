@@ -1,7 +1,16 @@
 var items = []
 let wheelInt = 0
 
-let isInViewport = function (e, offset) {
+var checkScrollPosition = () => {
+  var scroll = $(window).scrollTop()
+  if (scroll > 200) {
+    document.querySelector('.header').classList.add('scroll')
+  } else {
+    document.querySelector('.header').classList.remove('scroll')
+  }
+}
+
+var isInViewport = function (e, offset) {
   if (!e) return false
   offset = offset ? offset : 0
   const rect = e.getBoundingClientRect()
@@ -21,7 +30,8 @@ $(window).on("load", function() {
   setTimeout(() => {
     $('body').removeClass('hidden')
     $('body').addClass('auto')
-    $(' html, body').css({'overflow-y': 'auto'});  
+    $(' html, body').css({'overflow-y': 'auto'});
+    checkScrollPosition()
   }, 2000)
   $('.toggle-menu').click(() => {
     const overflow = document.querySelector('.overlay').classList.contains('active') ? 'auto' : 'hidden'
@@ -33,12 +43,7 @@ $(window).on("load", function() {
     }, 30)
   })
   $(window).scroll(function(e) {
-    var scroll = $(window).scrollTop()
-    if (scroll > 200) {
-      document.querySelector('.header').classList.add('scroll')
-    } else {
-      document.querySelector('.header').classList.remove('scroll')
-    }
+    checkScrollPosition()
   })
 })
 

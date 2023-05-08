@@ -396,6 +396,10 @@ body.hidden {
   color: #555;
 }
 
+.text-muted {
+  color: #666;
+}
+
 .text-hili {
   font-size: 1.5rem;
   font-weight: 300;

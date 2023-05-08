@@ -10,7 +10,7 @@
     <div class="inner">
       <ul class="icons">
       <?php foreach(page('socials')->children() as $social): ?>
-        <li><a href="<?= $social->action()->value() ? $social->action() . ':' : '' ?><?= $social->link() ?>" class="icon style1 <?= $social->icon() ?>" target="_blank"><span class="label"><?= $social->title() ?></span></a></li>
+        <li><a href="<?= $social->action()->value() ? $social->action() . ':' : '' ?><?= $social->link() ?>" class="icon text-muted style1 <?= $social->icon() ?>" target="_blank"><span class="label"><?= $social->title() ?></span></a></li>
       <?php endforeach ?>
       </ul>
       <p>© <?= date('Y') ?> <?= $site->title() ?> | <?= $site->slogan() ?: '' ?></p>
