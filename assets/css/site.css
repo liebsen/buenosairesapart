@@ -344,9 +344,9 @@ body.hidden {
   overflow: hidden;
 }
 
-.section:nth-child(1) {
+/*.section:nth-child(1) {
   padding-top: 10rem;
-}
+}*/
 
 #map {
   width: 100%;

@@ -41,9 +41,9 @@
           setTimeout(() => {
             map.flyTo({
               center: pos,
-              pitch: 70,
+              pitch: 60,
               zoom:17,
-              bearing: -45,
+              bearing: -60,
               duration: 15000,
             })
           }, 5000)
