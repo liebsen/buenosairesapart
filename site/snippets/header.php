@@ -4,6 +4,7 @@
   <title><?php snippet('pagetitle') ?></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="manifest" href="/manifest.json">
   <meta name="description" content="<?= $site->text() ?>"/>
   <meta property="og:type" content="<?= $site->ogtype() ?>" />
   <meta property="og:title" content="<?= $site->ogtitle() ?>" />
@@ -152,8 +153,8 @@
         </a>
         <?php endif;?>
         <?php endforeach;?>
-        <?php foreach(page('socials')->children() as $social): ?>
-        <a href="<?= $social->action()->value() ? $social->action() . ':' : '' ?><?= $social->link() ?>" class="icon style1 <?= $social->icon() ?>" target="_blank"><span class="label"><?= $social->title() ?></span></a>
+        <?php foreach(page('networks')->children()->visible() as $network): ?>
+        <a href="<?= $network->action()->value() ? $network->action() . ':' : '' ?><?= $network->link() ?>" class="icon style1 <?= $network->icon() ?>" target="_blank"><span class="label"><?= $network->title() ?></span></a>
         <?php endforeach ?>
         <?php if(page('home')->action()):?>
           <a href="<?= page('home')->actionUrl() ?>" class="button primary small"><?= page('home')->actionText() ?></a>

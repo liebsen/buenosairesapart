@@ -9,8 +9,8 @@
   <footer class="wrapper style1 align-center">
     <div class="inner">
       <ul class="icons">
-      <?php foreach(page('socials')->children() as $social): ?>
-        <li><a href="<?= $social->action()->value() ? $social->action() . ':' : '' ?><?= $social->link() ?>" class="icon text-muted style1 <?= $social->icon() ?>" target="_blank"><span class="label"><?= $social->title() ?></span></a></li>
+      <?php foreach(page('networks')->children()->visible() as $network): ?>
+        <li><a href="<?= $network->action()->value() ? $network->action() . ':' : '' ?><?= $network->link() ?>" class="icon text-muted style1 <?= $network->icon() ?>" target="_blank"><span class="label"><?= $network->title() ?></span></a></li>
       <?php endforeach ?>
       </ul>
       <p>© <?= date('Y') ?> <?= $site->title() ?> | <?= $site->slogan() ?: '' ?></p>

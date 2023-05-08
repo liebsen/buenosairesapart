@@ -2,7 +2,7 @@
 <?php snippet('header') ?>
   <div id="wrapper">
     <section class="spotlight style1 content-white orient-left content-align-left background-image fullscreen onload-image-fade-in onload-content-fade-right" id="home" style="background-image:url(<?= $page->files()->first() ? $page->files()->first()->url() : ''; ?>); background-position: <?= $page->files()->first() ? "center {$positions[intval($page->files()->first()->position()->value())]}" : 'center'; ?>">
-      <div class="content">
+      <div class="content mw-10">
         <div class="anchor" name="<?= $site->children()->first()->slug() ?>"></div>
         <h1 class="text-white"><?php echo $page->title()->html() ?></h1>
         <p class="text-white text-hili"><?= $page->text() ?></p>
@@ -56,7 +56,7 @@
 
     <?php $i=0; foreach($site->children()->visible() as $section):?>
       <?php if ($section->home()->value() === 'true'):?>
-      <section class="spotlight style1 orient-<?= intval($i%2) == 0 ? 'right' : 'left' ?> content-align-left image-position-center onscroll-image-fade-in onscroll-content-fade-<?= intval($i%2) == 0 ? 'right' : 'left' ?>" id="<?= $section->slug() ?>">        
+      <section class="spotlight style1 orient-<?= intval($i%2) == 0 ? 'right' : 'left' ?> content-align-left image-position-center onscroll-image-fade-<?= intval($i%2) == 0 ? 'right' : 'left' ?> onscroll-content-fade-<?= intval($i%2) == 0 ? 'right' : 'left' ?>" id="<?= $section->slug() ?>">        
         <div class="content">
           <div class="anchor" name="<?= $section->slug() ?>"></div>
           <h1><?= $section->title() ?></h1>
