@@ -22,6 +22,7 @@
         </div>
       </div>
       <!-- Gallery -->
+      <?php if(count($page->files()) > 1):?>
       <div class="gallery style2 medium lightbox onscroll-fade-in">
       <?php foreach($page->files() as $file) :?>
         <article>
@@ -38,6 +39,7 @@
         </article>
       <?php endforeach; ?>
       </div>
+      <?php endif ?>
     </section>
   </div>
 
