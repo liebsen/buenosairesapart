@@ -155,8 +155,8 @@
         <?php foreach(page('socials')->children() as $social): ?>
         <a href="<?= $social->action()->value() ? $social->action() . ':' : '' ?><?= $social->link() ?>" class="icon style1 <?= $social->icon() ?>" target="_blank"><span class="label"><?= $social->title() ?></span></a>
         <?php endforeach ?>
-        <?php if($page->action()):?>
-          <a href="<?= $page->actionUrl() ?>" class="button primary small"><?= $page->actionText() ?></a>
+        <?php if(page('home')->action()):?>
+          <a href="<?= page('home')->actionUrl() ?>" class="button primary small"><?= page('home')->actionText() ?></a>
         <?php endif ?>
         </div> 
       </div>

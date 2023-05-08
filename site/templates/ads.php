@@ -2,12 +2,12 @@
   <div id="wrapper" class="divided">
     <section class="section wrapper style1 align-center">
       <div class="anchor" name="<?= $page->slug() ?>"></div>
-      <header>
+      <!--header>
         <div class="section-image" style="background-image:url(<?= $page->image() ? $page->image()->url() : ''; ?>)">
           <h1 class="text-shadow"><?= $page->title() ?></h1>
           <p class="text-shadow2"><?= $page->subtitle() ?></p>
         </div>
-      </header>      
+      </header-->
       <!--div class="inner">
         <h2 class="align-left"><?= $page->title() ?></h2>
         <p class="align-left"><?= $page->subtitle() ?></p>
@@ -32,7 +32,7 @@
             style: 'mapbox://styles/mapbox/dark-v9',
             center: [-58.468291099,-34.5420301],
             zoom: 14,
-            // interactive: false
+            interactive: false,
           })
 
           // Create a default Marker, colored black, rotated 45 degrees.

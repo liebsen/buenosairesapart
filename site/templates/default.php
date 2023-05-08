@@ -1,6 +1,6 @@
 <?php $positions = ['center','top','left','right','bottom']; ?>
 <?php snippet('header') ?>
-  <div id="wrapper" class="divided">
+  <div id="wrapper">
     <section class="spotlight style1 content-white orient-left content-align-left background-image fullscreen onload-image-fade-in onload-content-fade-right" id="home" style="background-image:url(<?= $page->files()->first() ? $page->files()->first()->url() : ''; ?>); background-position: <?= $page->files()->first() ? "center {$positions[intval($page->files()->first()->position()->value())]}" : 'center'; ?>">
       <div class="content">
         <div class="anchor" name="<?= $site->children()->first()->slug() ?>"></div>

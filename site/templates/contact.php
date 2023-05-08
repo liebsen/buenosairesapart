@@ -1,5 +1,5 @@
 <?php snippet('header') ?>
-  <section class="section wrapper style1 align-center">
+  <section class="section wrapper style1 align-center bg-light">
     <div class="inner medium">
       <h2><?= $page->title()->html() ?></h2>
       <?php if($success && !isset($alert['error'])): ?>
