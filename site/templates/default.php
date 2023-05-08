@@ -10,13 +10,13 @@
           <li><a href="#avisos" class="button btn-white large wide smooth-scroll-middle">Comenzar</a></li>
         </ul>
       </div>
-      <div class="tail" name="<?= $site->children()->first()->slug() ?>"></div>
+      <div class="tail" name="home"></div>
     </section>
 
     <section id="avisos" class="spotlight style1 orient-left content-align-center image-position-center onscroll-image-fade-in onscroll-content-fade-left">
       <div class="anchor" name="avisos"></div>
       <div class="content">
-        <h1 class="text-white"><?php echo $site->find('/avisos')->title() ?></h1>
+        <h1><?php echo $site->find('/avisos')->title() ?></h1>
         <p class="text-light text-hili"><?php echo $site->find('/avisos')->text() ?></p>
         <ul class="actions stacked">
           <li><a href="/avisos" class="button large wide smooth-scroll-middle">Más de nuestros avisos</a></li>

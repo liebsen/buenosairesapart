@@ -177,7 +177,7 @@ body.hidden {
   }
 
   .overlay-tools {
-    display: block;
+    display: block!important;
   }
 
   .overlay-content .close {
