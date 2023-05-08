@@ -7,7 +7,7 @@
         <h1 class="text-white"><?php echo $page->title()->html() ?></h1>
         <p class="text-white text-hili"><?= $page->text() ?></p>
         <ul class="actions stacked">
-          <li><a href="#ads" class="button btn-white large wide smooth-scroll-middle">Comenzar</a></li>
+          <li><a href="#ads" class="button btn-white large wide smooth-scroll-middle">Learn more</a></li>
         </ul>
       </div>
       <div class="tail" name="home"></div>
