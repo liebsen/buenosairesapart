@@ -18,7 +18,7 @@
         </div>
         <div class="fields">
           <div class="field half">
-            <label for="name">Nombre completo</label>
+            <label for="name">Your fullname</label>
             <input type="text" name="name" id="name" value="" />
           </div>
           <div class="field half">
@@ -26,12 +26,12 @@
             <input type="email" name="email" id="email" value="" />
           </div>
           <div class="field">
-            <label for="text">Mensaje</label>
-            <textarea name="text" id="text" rows="6"></textarea>
+            <label for="text">Your message(*)</label>
+            <textarea name="text" id="text" rows="6" required></textarea>
           </div>
         </div>
         <ul class="actions special">
-          <li><input type="submit" name="submit" id="submit" value="Solicitar contacto" /></li>
+          <li><input type="submit" name="submit" id="submit" value="Send request" /></li>
         </ul>
       </form>
       <?php endif ?>
