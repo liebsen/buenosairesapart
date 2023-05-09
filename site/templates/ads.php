@@ -70,10 +70,10 @@
 
       <!-- Gallery -->
       <div class="inner">
-        <h2 class="align-left">Venta</h2>
+        <h2 class="align-left">Sale</h2>
         <hr>
         <div class="gallery style2 large lightbox onscroll-fade-in">
-        <?php foreach($page->children() as $ad) :?>
+        <?php foreach($page->children()->visible() as $ad) :?>
           <?php if ($ad->operation()->value() == 0 && $ad->enable()->value() === 'true'):?>
           <article>
             <a href="<?= $ad->url() ?>" class="image">
@@ -81,7 +81,7 @@
             </a>
             <div class="caption">
               <h3><?= $ad->title() ?></h3>
-              <p><?= $ad->text() ?></p>
+              <p><?= $ad->caption() ?></p>
               <ul class="actions fixed">
                 <li><span class="button small">Detalles</span></li>
               </ul>
@@ -93,10 +93,10 @@
       </div>
       <!-- Gallery 2 -->
       <div class="inner">
-        <h2 class="align-left">Alquiler</h2>
+        <h2 class="align-left">Rent</h2>
         <hr>
         <div class="gallery style2 large lightbox onscroll-fade-in">
-        <?php foreach($page->children() as $ad) :?>
+        <?php foreach($page->children()->visible() as $ad) :?>
           <?php if ($ad->operation()->value() == 1 && $ad->enable()->value() === 'true'):?>
           <article>
             <a href="<?= $ad->url() ?>" class="image">

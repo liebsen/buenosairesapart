@@ -15,77 +15,106 @@ files:
       help: Fit image direction  
 fields:
   title:
-    label: Título del aviso
+    label: Title of the ad
     type:  text
     validate:
       minLength: 10
       maxLength: 300
   enable:
-    label: Activar
+    label: Enabled
     type:  toggle
     default: true  
   operation: 
-    label: Operación
+    label: Operation
     type: radio
-    options: ['Venta', 'Alquiler']
+    options: ['Sale', 'Rent']
     default: 0
   building:
-    label: Edificio
+    label: Building
     type:  radio
-    options: ['Casa', 'Chalet', 'Departamento', 'Monoambiente']
-  rooms:
-    label: Ambientes
-    type:  number
+    options: ['House', 'Chalet', 'Apartment', 'Monoambiente']
   sup:
-    label: Superficie cubierta
+    label: Covered area (m2)
     type:  number
   totsup:
-    label: Superficie total
+    label: Total area (m2)
     type:  number
+  rooms:
+    label: Rooms
+    type:  number
+  bathrooms:
+    label: Bathrooms
+    type:  number
+  floors:
+    label: Floors
+    type:  number
+  delivertime:
+    label: Time to deliver (days)
+    type:  number
+  price:
+    label: Price (USD)
+    type:  number
+  currency: 
+    label: Currency
+    type: select
+    options: ['USD', 'ARS']
+    default: 0
+  equipment:
+    label: Equipment
+    type:  text
   yard:
-    label: Patio
+    label: Yard
     type:  toggle
   balcony:
-    label: Balcón
+    label: Balcony
     type:  toggle
-  brightness:
-    label: Luminosidad
-    type: radio
-    options: ['Pobre', 'Regular', 'Buena', 'Excelente']
-    default: 1
   address:
-    label: Dirección
+    label: Address
     type:  googlegeocode
   lat:
-    label: Latitud
+    label: Latitude
     type:  text
   lng:
-    label: Longitud
+    label: Longitude
     type:  text
   text:
-    label: Cuerpo del aviso
+    label: Body of the ad
     type:  textarea
-  price:
-    label: Precio
-    type:  number
-    default: 1000
-  currency: 
-    label: Moneda
-    type: radio
-    options: ['ARS', 'USD']
-    default: 0
   link:
-    label: Enlace
+    label: Link
     type:  text
+  line-b:
+    type:  line
+  brightness:
+    label: Brighness
+    type: radio
+    options: ['Poor', 'Regular', 'Good', 'Excelent']
+    default: 1
+  loudness:
+    label: Loudness
+    type: radio
+    options: ['Poor', 'Regular', 'Good', 'Excelent']
+    default: 1
+  loudness:
+    label: Loudness
+    type: radio
+    options: ['Poor', 'Regular', 'Good', 'Excelent']
+    default: 1
+
+
   showprice:
-    label: Mostrar Precio
+    label: Show price
     type:  toggle
     default: true
   showaddress:
-    label: Mostrar Dirección
+    label: Show address
     type:  toggle
     default: true
   sold:
-    label: Vendido
+    label: Sold
+    type:  toggle
+    default: false
+  rented:
+    label: Rented
     type:  toggle
     default: false

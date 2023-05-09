@@ -1,5 +1,5 @@
 <?php snippet('header') ?>
-<?php $currencies = ['ARS', 'USD'] ?>
+<?php $currencies = ['USD', 'ARS'] ?>
 <?php $operations = ['Venta', 'Alquiler'] ?>
 <?php $brightness = ['Pobre', 'Regular', 'Buena', 'Excelente'] ?>
 <?php $building = ['Casa', 'Chalet', 'Departamento', 'Monoambiente'] ?>
@@ -63,9 +63,59 @@
         </div>
       </header-->
 
+
       <div class="inner align-left">
         <!--h3 class=""><?= $page->title() ?></h3-->
-        <div class="ad-box">
+
+        <div class="table-wrapper">
+          <table class="alt">
+            <tbody>
+            <?php if($page->sup()->value()):?>
+              <tr>
+                <td align="right"><strong>Covered</strong></td>
+                <td align="left"><?= $page->sup()->value() ?>m2</td>
+              </tr>
+            <?php endif ?>
+            <?php if($page->rooms()->value()):?>
+              <tr>
+                <td align="right"><strong>Rooms</strong></td>
+                <td align="left"><?= $page->rooms()->value() ?></td>
+              </tr>
+            <?php endif ?>
+            <?php if($page->bathrooms()->value()):?>
+              <tr>
+                <td align="right"><strong>Bathrooms</strong></td>
+                <td align="left"><?= $page->bathrooms()->value() ?></td>
+              </tr>
+            <?php endif ?>
+            <?php if($page->floors()->value()):?>
+              <tr>
+                <td align="right"><strong>Floors</strong></td>
+                <td align="left"><?= $page->floors()->value() ?></td>
+              </tr>
+            <?php endif ?>
+            <?php if($page->delivertime()->value()):?>
+              <tr>
+                <td align="right"><strong>Delivery time</strong></td>
+                <td align="left"><?= $page->delivertime()->value() ?> days</td>
+              </tr>
+            <?php endif ?>
+            <?php if($page->price()->value()):?>
+              <tr>
+                <td align="right"><strong>Price</strong></td>
+                <td align="left"><?= $page->price()->value() ?> <?= $currencies[$page->currency()->value()] ?></td>
+              </tr>
+            <?php endif ?>
+            <?php if($page->equipment()->value()):?>
+              <tr>
+                <td align="right"><strong>Equipped with</strong></td>
+                <td align="left"><?= $page->equipment()->value() ?></td>
+              </tr>
+            <?php endif ?>
+            </tbody>
+          </table>
+        </div>              
+        <!--div class="ad-box">
           <h2>
           <?php if ($page->building()) :?>
           <?= $building[$page->building()->value()] ?>
@@ -98,7 +148,7 @@
           <?php if($page->balcony()->value() === 'true'): ?>
           <h4>Balcón  <span class="fas fa-check text-success"></span></h4>
           <?php endif ?>
-        </div>
+        </div-->
       </div>
       <div class="inner align-left">
         <div class="p-align-left"><?= $page->text()->kirbytext() ?></div>
