@@ -50,7 +50,6 @@ body.hidden {
 
 .menu-options a {
   color: var(--theme-color);
-  font-size: 1.25rem;
   text-shadow: 0 0 2px #555;
   font-weight: 600;
   text-decoration: none;
@@ -189,12 +188,11 @@ body.hidden {
   }
 
   .overlay-content a {
-    font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',sans-serif;
     flex: 1;
     flex-grow: 0;
     color: var(--theme-color);
     text-align: center;
-    font-size: 1.75rem;
+    /*font-size: 1.75rem;*/
     padding: 0.25rem 0;
     margin: 0;
     text-decoration: none;
@@ -250,14 +248,17 @@ body.hidden {
   }  
 }
 
-.spotlight.style1 {
+/*.spotlight.style1 {
+  min-height: 100vh;
+}*/
+
+.fullscreen {
   min-height: 100vh;
 }
 
 .spotlight:last-child .button-next {
   display: none;
 }
-
 
 .p-align-left p {
   text-align: left;
@@ -417,7 +418,7 @@ body.hidden {
 }
 
 .text-hili {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 300;
 }
 

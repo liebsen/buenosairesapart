@@ -81,6 +81,11 @@ fields:
     type:  text
     default: 'Montserrat'
     help: 'ej. Montserrat, Lato, ...'
+  fontsize:
+    label: Font Size (px)
+    type:  number
+    default: 14
+    help: 'ej. 14, 15, ...'
   fontweight:
     label: Font Weight
     type:  text
