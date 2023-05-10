@@ -2,18 +2,6 @@
   <div id="wrapper" class="divided">
     <section class="section wrapper style1 align-center">
       <div class="anchor" name="<?= $page->slug() ?>"></div>
-      <!--header>
-        <div class="section-image" style="background-image:url(<?= $page->image() ? $page->image()->url() : ''; ?>)">
-          <h1 class="text-shadow"><?= $page->title() ?></h1>
-          <p class="text-shadow2"><?= $page->subtitle() ?></p>
-        </div>
-      </header-->
-      <!--div class="inner">
-        <h2 class="align-left"><?= $page->title() ?></h2>
-        <p class="align-left"><?= $page->subtitle() ?></p>
-        <hr>
-        <div class="p-align-left"><?= $page->text()->kirbytext() ?></div>
-      </div-->      
       <!-- Map -->
       <header>
         <div class="map-container">
@@ -36,7 +24,7 @@
           })
 
           // Create a default Marker, colored black, rotated 45 degrees.
-          <?php $locations = []; foreach($page->children() as $ad) :?>
+          <?php $locations = []; foreach($items as $ad) :?>
             <?php $locations[] = (object) [
               "title" => $ad->title()->value(),
               "url" => $ad->url(),
@@ -70,47 +58,22 @@
 
       <!-- Gallery -->
       <div class="inner">
-        <h2 class="align-left">Sale</h2>
+        <h2 class="align-left">Properties</h2>
         <hr>
         <div class="gallery style2 large lightbox onscroll-fade-in">
-        <?php foreach($page->children()->visible() as $ad) :?>
-          <?php if ($ad->operation()->value() == 0 && $ad->enable()->value() === 'true'):?>
+        <?php foreach($items as $item) :?>
           <article>
             <a href="<?= $ad->url() ?>" class="image">
-              <div class="slide-image" style="background-image: url('<?= count($ad->files()) ? $ad->files()->first()->url() : '' ?>')"></div>
+              <div class="slide-image" style="background-image: url('<?= count($item->files()) ? $item->files()->first()->url() : '' ?>')"></div>
             </a>
             <div class="caption">
-              <h3><?= $ad->title() ?></h3>
-              <p><?= $ad->caption() ?></p>
+              <h3><?= $item->title() ?></h3>
+              <p><?= $item->caption() ?></p>
               <ul class="actions fixed">
                 <li><span class="button small">Detalles</span></li>
               </ul>
             </div>
           </article>
-        <?php endif;?>
-        <?php endforeach; ?>
-        </div>
-      </div>
-      <!-- Gallery 2 -->
-      <div class="inner">
-        <h2 class="align-left">Rent</h2>
-        <hr>
-        <div class="gallery style2 large lightbox onscroll-fade-in">
-        <?php foreach($page->children()->visible() as $ad) :?>
-          <?php if ($ad->operation()->value() == 1 && $ad->enable()->value() === 'true'):?>
-          <article>
-            <a href="<?= $ad->url() ?>" class="image">
-              <div class="slide-image" style="background-image: url('<?= $ad->files()->first()->url() ?>')"></div>
-            </a>
-            <div class="caption">
-              <h3><?= $ad->title() ?></h3>
-              <p><?= $ad->text() ?></p>
-              <ul class="actions fixed">
-                <li><span class="button small">Detalles</span></li>
-              </ul>
-            </div>
-          </article>
-        <?php endif;?>
         <?php endforeach; ?>
         </div>
       </div>

@@ -7,24 +7,24 @@
         <h1 class="text-white"><?php echo $page->title()->html() ?></h1>
         <p class="text-white text-hili"><?= $page->text() ?></p>
         <ul class="actions stacked">
-          <li><a href="#ads" class="button btn-white large wide smooth-scroll-middle">Learn more</a></li>
+          <li><a href="#properties" class="button btn-white large wide smooth-scroll-middle">Learn more</a></li>
         </ul>
       </div>
       <div class="tail" name="home"></div>
     </section>
 
-    <section id="ads" class="spotlight style1 orient-left content-align-center image-position-center onscroll-image-fade-in onscroll-content-fade-left">
-      <div class="anchor" name="ads"></div>
+    <section id="properties" class="spotlight style1 orient-left content-align-center image-position-center onscroll-image-fade-in onscroll-content-fade-left">
+      <div class="anchor" name="properties"></div>
       <div class="content">
-        <h1><?php echo $site->find('/ads')->title() ?></h1>
-        <p class="text-light text-hili"><?php echo $site->find('/ads')->text() ?></p>
+        <h1><?php echo $site->find('/properties')->title() ?></h1>
+        <p class="text-light text-hili"><?php echo $site->find('/properties')->text() ?></p>
         <ul class="actions stacked">
-          <li><a href="/ads" class="button large wide smooth-scroll-middle">See all offerings</a></li>
+          <li><a href="/properties" class="button large wide smooth-scroll-middle">See all offerings</a></li>
         </ul>        
         <div class="swiffy">
           <div class="swiffy-slider">
             <ul class="slider-container">
-              <?php foreach($site->find('ads')->children()->visible() as $item):?>
+              <?php foreach($site->find('properties')->children()->visible() as $item):?>
               <li>
                 <a href="<?= $item->url() ?>" class="swiffy-item bg-light">
                   <div class="swiffy-img" style="background-image: url('<?= $item->files()->first() ? $item->files()->first()->url() : '' ?>')"></div>
@@ -37,19 +37,19 @@
             <?php endforeach ?>
             </ul>
 
-            <?php if(count($site->find('ads')->children()->visible()) > 1):?>
+            <?php if(count($site->find('properties')->children()->visible()) > 1):?>
             <button type="button" class="slider-nav"></button>
             <button type="button" class="slider-nav slider-nav-next"></button>
             <?php endif ?>
 
             <div class="slider-indicators">
-              <?php foreach($site->find('ads')->children()->visible() as $i => $item):?>
+              <?php foreach($site->find('properties')->children()->visible() as $i => $item):?>
               <button<?= !$i ? ' class="active"' : '' ?>></button>
               <?php endforeach ?>
             </div>
           </div>
         </div>
-        <div class="tail" name="ads"></div>
+        <div class="tail" name="properties"></div>
       </div>
 
     </section>

@@ -1,9 +1,4 @@
 <?php snippet('header') ?>
-<?php $currencies = ['USD', 'ARS'] ?>
-<?php $operations = ['Venta', 'Alquiler'] ?>
-<?php $brightness = ['Pobre', 'Regular', 'Buena', 'Excelente'] ?>
-<?php $building = ['Casa', 'Chalet', 'Departamento', 'Monoambiente'] ?>
-
   <div id="wrapper" class="divided">
     <div class="floating-taps">
       <a href="https://wa.me/<?= site()->wpp() ?>?text=<?= site()->wppstr() ?> <?= $page->url() ?>" class="wpp is-clickable" target="_blank">
@@ -114,41 +109,7 @@
             <?php endif ?>
             </tbody>
           </table>
-        </div>              
-        <!--div class="ad-box">
-          <h2>
-          <?php if ($page->building()) :?>
-          <?= $building[$page->building()->value()] ?>
-          <?php endif ?>
-          <?php if ($page->operation()) :?>
-          en <?= $operations[$page->operation()->value()] ?>
-          <?php endif ?>
-          </h2>
-          <?php if ($page->price() && $page->showprice()->value() !== 'false') :?>
-            <h4><?= $page->price() ?><?= $currencies[$page->currency()->value()] ?></h4>
-          <?php endif ?>
-          <?php if ($page->address() && $page->showaddress()->value() !== 'false') :?>
-            <h4><?= $page->address() ?></h4>
-          <?php endif ?>
-          <?php if ($page->rooms()) :?>
-          <h4><?= $page->rooms()->value()?> amb</h4>
-          <?php endif ?>
-          <?php if ($page->brightness()) :?>
-          <h4>Luminosidad <?= $brightness[$page->brightness()->value()] ?></h4>
-          <?php endif ?>
-          <?php if ($page->sup()) :?>
-          <h4><?= $page->sup()->value()?>m2</h4>
-          <?php endif ?>
-          <?php if ($page->totsup() && $page->sup() !== $page->totsup()) :?>
-          <h4><?= $page->totsup()->value()?>m2 total</h4>
-          <?php endif ?>
-          <?php if($page->yard()->value() === 'true'): ?>
-          <h4>Patio <span class="fas fa-check text-success"></span></h4>
-          <?php endif ?>
-          <?php if($page->balcony()->value() === 'true'): ?>
-          <h4>Balcón  <span class="fas fa-check text-success"></span></h4>
-          <?php endif ?>
-        </div-->
+        </div>
       </div>
       <div class="inner align-left">
         <div class="p-align-left"><?= $page->text()->kirbytext() ?></div>
