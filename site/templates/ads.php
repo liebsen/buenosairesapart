@@ -60,22 +60,30 @@
       <div class="inner">
         <h2 class="align-left">Properties</h2>
         <hr>
-        <div class="gallery style2 large lightbox onscroll-fade-in">
+        <!--div class="gallery style2 large lightbox onscroll-fade-in"-->
+        
         <?php foreach($items as $item) :?>
-          <article>
-            <a href="<?= $ad->url() ?>" class="image">
-              <div class="slide-image" style="background-image: url('<?= count($item->files()) ? $item->files()->first()->url() : '' ?>')"></div>
-            </a>
-            <div class="caption">
+          <section>
+            <header>
               <h3><?= $item->title() ?></h3>
-              <p><?= $item->caption() ?></p>
-              <ul class="actions fixed">
-                <li><span class="button small">Detalles</span></li>
-              </ul>
-            </div>
-          </article>
+            </header>
+            <div class="content">
+              <a href="<?= $ad->url() ?>" class="image">
+                <div class="box-custom">
+                  <div class="slide-image" style="background-image: url('<?= count($item->files()) ? $item->files()->first()->url() : '' ?>')">
+                    
+                    <?php if($item->rooms->value()):?>
+                      <i class="fa fa-bedroom"><?= $item->rooms() ?></i>
+                    <?php endif ?>
+                  </div>
+                  <p><?= $item->caption() ?></p>
+                </div>
+              </div>
+            </a>
+          </section>
         <?php endforeach; ?>
-        </div>
+        
+        <!--/div-->
       </div>
     </section>
   </div>

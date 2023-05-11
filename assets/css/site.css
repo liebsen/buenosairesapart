@@ -381,11 +381,18 @@ body.hidden {
   animation-delay: 2s;
 }
 
+.box-custom {
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
 .slide-image {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   min-height: 20rem;
+  min-width: 20rem;
 }
 
 .section-image {

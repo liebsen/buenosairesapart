@@ -85,29 +85,36 @@ fields:
     type:  text
   line-b:
     type:  line
-  brightness:
-    label: Brighness
-    type: radio
+  luminosity:
+    label: Luminosity
+    type: select
     options: ['Poor', 'Regular', 'Good', 'Excelent']
-    default: 1
+    default: 2
   loudness:
     label: Loudness
-    type: radio
+    type: select
     options: ['Poor', 'Regular', 'Good', 'Excelent']
-    default: 1
-  loudness:
-    label: Loudness
-    type: radio
+    default: 2
+  landscape:
+    label: Landscape
+    type: select
     options: ['Poor', 'Regular', 'Good', 'Excelent']
-    default: 1
-
-
+    default: 2
+  accessibility:
+    label: Accessibility
+    type: select
+    options: ['Poor', 'Regular', 'Good', 'Excelent']
+    default: 2
   showprice:
     label: Show price
     type:  toggle
     default: true
+  showmap:
+    label: Show map
+    type:  toggle
+    default: false
   showaddress:
-    label: Show address
+    label: Show map
     type:  toggle
     default: true
   sold:

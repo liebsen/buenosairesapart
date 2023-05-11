@@ -1,3 +1,4 @@
+<?php $currencies = ['USD','ARS'] ?>
 <?php snippet('header') ?>
   <div id="wrapper" class="divided">
     <div class="floating-taps">
@@ -7,8 +8,6 @@
     </div>
     <section class="section wrapper style1 align-center">
       <div class="anchor" name="<?= $page->slug() ?>"></div>
-
-
       <!-- map -->      
       <header>
         <?php if ($page->lat()->value() && $page->lng()->value()): ?>
