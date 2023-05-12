@@ -117,6 +117,10 @@ fields:
     label: Show map
     type:  toggle
     default: true
+  showcontactbutton:
+    label: Show contact button
+    type:  toggle
+    default: true
   sold:
     label: Sold
     type:  toggle

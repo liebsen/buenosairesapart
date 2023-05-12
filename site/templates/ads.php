@@ -1,7 +1,9 @@
+<?php $currencies = ['USD','ARS'] ?>
 <?php snippet('header') ?>
   <div id="wrapper" class="divided">
     <section class="section wrapper style1 align-center">
       <div class="anchor" name="<?= $page->slug() ?>"></div>
+      <?php if ($page->showmap()->value() && $page->lat()->value() && $page->lng()->value()): ?>
       <!-- Map -->
       <header>
         <div class="map-container">
@@ -55,6 +57,46 @@
           }
         </script>   
       </header>
+    <?php endif ?>
+    
+
+<?php
+
+function get_color_by_value($val) {
+  switch($val) {
+    case 0:
+    case 1: 
+      return 'muted';
+    case 2:
+      return 'warning';
+    case 3: 
+      return 'success';
+  }
+}
+
+$specs = [
+  (object) [
+    "name" => "luminosity",
+    "icon"=> "sun"
+  ],
+  (object) [
+    "name"=> "loudness",
+    "icon"=> "deafness"
+  ],
+  (object) [
+    "name"=> "landscape",
+    "icon"=> "tree"
+  ],
+  (object) [
+    "name"=> "accessibility",
+    "icon"=> "road"
+  ],
+  (object) [
+    "name"=> "price",
+    "icon"=> "money"
+  ],
+];
+?>
 
       <!-- Gallery -->
       <div class="inner">
@@ -68,13 +110,14 @@
               <h3><?= $item->title() ?></h3>
             </header>
             <div class="content">
-              <a href="<?= $ad->url() ?>" class="image">
-                <div class="box-custom">
-                  <div class="slide-image" style="background-image: url('<?= count($item->files()) ? $item->files()->first()->url() : '' ?>')">
-                    
-                    <?php if($item->rooms->value()):?>
-                      <i class="fa fa-bedroom"><?= $item->rooms() ?></i>
-                    <?php endif ?>
+              <a href="<?= $item->url() ?>" class="inline-100">
+                <div class="box-custom" style="background-image: url('<?= count($item->files()) ? $item->files()->first()->url() : '' ?>')">
+                  <div class="icon-specs">
+                  <?php foreach($specs as $spec): $val = $item->{$spec->name}()->value(); ?>
+                    <?php if($val):?>
+                      <i class="fa fa-<?= $spec->icon ?> text-<?= get_color_by_value($val) ?>"></i>
+                    <?php endif ?>  
+                  <?php endforeach ?>
                   </div>
                   <p><?= $item->caption() ?></p>
                 </div>

@@ -42,8 +42,14 @@ $(window).on("load", function() {
       //$(' html, body').css({'overflow-y': overflow})
     }, 30)
   })
+  var clock = 0
   $(window).scroll(function(e) {
-    checkScrollPosition()
+    if(clock) {
+      clearInterval(clock)
+    }
+    clock = setTimeout(() => {
+      checkScrollPosition()
+    }, 500)
   })
 })
 

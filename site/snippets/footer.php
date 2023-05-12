@@ -26,5 +26,6 @@
   <script src="/assets/js/util.js"></script>
   <script src="/assets/js/main.js"></script>
   <script src="/assets/js/site.js"></script>
+  <script src="https://kit.fontawesome.com/6db13005a8.js" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -15,6 +15,8 @@ fields:
   subtitle:
     label: Subtítulo
     type:  text
+  line-a:
+    type:  line    
   button:
     label: Texto del botón
     type:  text    
@@ -27,6 +29,16 @@ fields:
   text:
     label: Text
     type:  textarea
+  line-b:
+    type:  line    
+  showmap:
+    label: Show map
+    type:  toggle
+    default: false 
+  showcontactbutton:
+    label: Show contact button
+    type:  toggle
+    default: true
   home:
     label: Mostrar en Inicio
     type:  toggle
