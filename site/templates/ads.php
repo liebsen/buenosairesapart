@@ -1,9 +1,9 @@
 <?php $currencies = ['USD','ARS'] ?>
 <?php snippet('header') ?>
-  <div id="wrapper" class="divided">
+  <div id="wrapper" class="divided breathe">
+    <?php if ($page->showmap()->value() !== "false" && $page->lat()->value() && $page->lng()->value()): ?>
     <section class="section wrapper style1 align-center">
       <div class="anchor" name="<?= $page->slug() ?>"></div>
-      <?php if ($page->showmap()->value() && $page->lat()->value() && $page->lng()->value()): ?>
       <!-- Map -->
       <header>
         <div class="map-container">
@@ -57,9 +57,11 @@
           }
         </script>   
       </header>
-    <?php endif ?>
-    
+    </section>
+    <?php endif ?>   
 
+    <section class="section wrapper style1 align-center">
+      <div class="anchor" name="cards"></div>
 <?php
 
 function get_color_by_value($val) {
@@ -76,12 +78,12 @@ function get_color_by_value($val) {
 
 $specs = [
   (object) [
-    "name" => "luminosity",
-    "icon"=> "sun"
-  ],
-  (object) [
     "name"=> "loudness",
     "icon"=> "deafness"
+  ],
+  (object) [
+    "name" => "luminosity",
+    "icon"=> "sun"
   ],
   (object) [
     "name"=> "landscape",
@@ -99,32 +101,35 @@ $specs = [
 ?>
 
       <!-- Gallery -->
-      <div class="inner">
+      <div class="inner pt-0">
         <h2 class="align-left">Properties</h2>
         <hr>
         <!--div class="gallery style2 large lightbox onscroll-fade-in"-->
-        
+        <div class="row">
         <?php foreach($items as $item) :?>
-          <section>
-            <header>
-              <h3><?= $item->title() ?></h3>
-            </header>
+          <div class="col-12-xxsmall col-12-xsmall col-6-small col-4-medium col-3-large">
             <div class="content">
               <a href="<?= $item->url() ?>" class="inline-100">
-                <div class="box-custom" style="background-image: url('<?= count($item->files()) ? $item->files()->first()->url() : '' ?>')">
-                  <div class="icon-specs">
-                  <?php foreach($specs as $spec): $val = $item->{$spec->name}()->value(); ?>
-                    <?php if($val):?>
-                      <i class="fa fa-<?= $spec->icon ?> text-<?= get_color_by_value($val) ?>"></i>
-                    <?php endif ?>  
-                  <?php endforeach ?>
+                <div class="card">
+                  <div class="card-background" style="background-image: url('<?= count($item->files()) ? $item->files()->first()->url() : '' ?>')">
+                    <div class="features">
+                    <?php foreach($specs as $spec): $val = $item->{$spec->name}()->value(); ?>
+                      <?php if($val):?>
+                        <i class="fa fa-<?= $spec->icon ?> text-<?= get_color_by_value($val) ?>"></i>
+                      <?php endif ?>  
+                    <?php endforeach ?>
+                    </div>
                   </div>
-                  <p><?= $item->caption() ?></p>
+                  <div class="card-texts text-left">
+                    <h4 class="mb-1"><?= $item->title() ?></h4>
+                    <p><?= $item->caption()->value?: 'No description yet' ?></p>
+                  </div>
                 </div>
               </div>
             </a>
-          </section>
+          </div>
         <?php endforeach; ?>
+        </div>
         
         <!--/div-->
       </div>

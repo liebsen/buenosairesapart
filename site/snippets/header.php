@@ -119,7 +119,12 @@
     .loader-invisible {
       opacity:0;
       pointer-events: none;
-    }    
+    }   
+
+    .toogle-menu {
+      margin-right: 1rem;
+    }
+
   </style>
   <?php if($site->googleanalytics()->value()): ?>
     <?php snippet('googleanalytics') ?>
@@ -146,7 +151,7 @@
             <img class="logo animated fadeIn delay" src="<?= $site->logomenu()->value() ? $site->logomenu()->toFile()->url() : '' ?>" width="280" />
           </a>
         </div>
-        <div class="menu-options animated fadeIn delay2">
+        <div class="menu-options animated fadeIn delay">
         <?php foreach($site->children()->visible() as $section):?>
         <?php if ($section->header()->value() === 'true'):?>
         <a class="fadeIn" href="/<?= $section->slug() ?>">

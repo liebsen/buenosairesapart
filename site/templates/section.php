@@ -1,6 +1,6 @@
 <?php snippet('header') ?>
   <div id="wrapper" class="divided">
-    <section class="section wrapper style1 align-center">
+    <section class="section wrapper fullscreen style1 align-center">
       <div class="anchor" name="<?= $page->slug() ?>"></div>
       <?= snippet('pagetop') ?>
       <div class="inner">

@@ -1,6 +1,6 @@
 <?php snippet('header') ?>
-  <section class="section wrapper style1 align-center bg-light">
-    <div class="inner medium">
+  <section class="section wrapper style1 breathe align-center bg-light">
+    <div class="inner medium pt-0">
       <h2><?= $page->title()->html() ?></h2>
       <?php if($success && !isset($alert['error'])): ?>
       <div class="alert success">
@@ -27,7 +27,7 @@
           </div>
           <div class="field">
             <label for="text">Your message(*)</label>
-            <textarea name="text" id="text" rows="6" required></textarea>
+            <textarea name="text" id="text" rows="3" required></textarea>
           </div>
         </div>
         <ul class="actions special">

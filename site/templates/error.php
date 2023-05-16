@@ -8,8 +8,10 @@
           <p><?= $page->subtitle() ?></p>
         </header>
         <p><?= $page->text()->kirbytext() ?></p>
-        <a class="button" href="<?= url('/') ?>">Ir a inicio</a>
-        <a class="button" href="<?= url('/contacto') ?>">Contactar al administrador</a>
+        <div class="button-group">
+          <a class="button" href="<?= url('/') ?>">Ir a inicio</a>
+          <a class="button" href="<?= url('/contacto') ?>">Contactar al administrador</a>
+        </div>
       </div>
     </section>
   </div>

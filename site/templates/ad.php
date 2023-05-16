@@ -64,7 +64,7 @@
             <?php $photos[$i] = '/assets/images/image-placeholder.jpg' ?>
           <?php endif ?>
         <?php endfor ?>
-          <div class="row justify-content-center w-100 m-1">
+          <div class="row justify-content-center">
             <div class="col-12-small col-9-medium p-0">
               <div class="p-05">
                 <a href="<?= $photos[0] ?>" class="image">
@@ -102,9 +102,9 @@
 
       <div class="inner align-left">
         <!--h3 class=""><?= $page->title() ?></h3-->
-        <h3>Profile</h3>
+        <h3>Features</h3>
         <div class="table-wrapper">
-          <table class="alt">
+          <table class="alt pairs">
             <tbody>
             <?php if($page->loudness()->value()):?>
               <tr>
@@ -137,7 +137,7 @@
       <div class="inner align-left">
         <h3>Sheet</h3>
         <div class="table-wrapper">
-          <table class="alt">
+          <table class="alt pairs">
             <tbody>
             <?php if($page->sup()->value()):?>
               <tr>
